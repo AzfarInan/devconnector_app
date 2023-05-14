@@ -51,7 +51,7 @@ class InputField extends StatelessWidget {
         labelStyle: TextStyle(
           color: Colors.white,
           fontFamily: GoogleFonts.righteous().fontFamily,
-          fontSize: 28,
+          fontSize: 20,
         ),
         suffixIcon: suffixIcon,
       ),
@@ -59,7 +59,7 @@ class InputField extends StatelessWidget {
       style: TextStyle(
         fontFamily: GoogleFonts.righteous().fontFamily,
         color: Colors.white70,
-        fontSize: 25,
+        fontSize: 20,
       ),
       obscuringCharacter: '*',
       obscureText: obscurePassword,
@@ -95,14 +95,14 @@ class InputField extends StatelessWidget {
         labelStyle: TextStyle(
           color: Colors.white,
           fontFamily: GoogleFonts.righteous().fontFamily,
-          fontSize: 28,
+          fontSize: 20,
         ),
       ),
       cursorColor: Colors.white,
       style: TextStyle(
         fontFamily: GoogleFonts.righteous().fontFamily,
         color: Colors.white70,
-        fontSize: 25,
+        fontSize: 20,
       ),
       keyboardType: TextInputType.emailAddress,
       validator: validator,

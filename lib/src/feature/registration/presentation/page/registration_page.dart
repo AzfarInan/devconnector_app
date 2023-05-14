@@ -1,12 +1,12 @@
 import 'package:dev_connector_app/src/core/constants/k.dart';
 import 'package:dev_connector_app/src/core/constants/route_names.dart';
-import 'package:dev_connector_app/src/feature/login/presentation/widget/login_form.dart';
+import 'package:dev_connector_app/src/feature/registration/presentation/widget/registration_form.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class RegistrationPage extends StatelessWidget {
+  const RegistrationPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,35 +18,37 @@ class LoginPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: Hero(
-                  tag: K.titleTag,
-                  child: Text(
-                    'Dev Connector',
-                    style: Theme.of(context).textTheme.displayLarge,
-                  ),
-                ),
-              ),
               Center(
                 child: Hero(
                   tag: K.imageTag,
                   child: Image.asset(
                     K.backgroundLogo,
-                    width: 300,
-                    height: 300,
+                    width: 200,
+                    height: 200,
+                  ),
+                ),
+              ),
+              Center(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  child: Hero(
+                    tag: K.titleTag,
+                    child: Text(
+                      'Dev Connector',
+                      style: Theme.of(context).textTheme.displayMedium,
+                    ),
                   ),
                 ),
               ),
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16.0),
-                child: LoginForm(),
+                child: RegistrationForm(),
               ),
               GestureDetector(
                 onTap: () {
-                  _navigateToRegistrationPage(context);
+                  _navigateBackToLoginPage(context);
                 },
-                child: registerText(),
+                child: loginText(),
               ),
             ],
           ),
@@ -55,12 +57,12 @@ class LoginPage extends StatelessWidget {
     );
   }
 
-  Widget registerText() {
+  Widget loginText() {
     return Padding(
       padding: const EdgeInsets.only(top: 8.0, right: 16.0),
       child: RichText(
         text: TextSpan(
-          text: "Don't have an account, ",
+          text: "Already have an account, ",
           style: TextStyle(
             color: Colors.white70,
             fontSize: 16,
@@ -68,7 +70,7 @@ class LoginPage extends StatelessWidget {
           ),
           children: const <TextSpan>[
             TextSpan(
-              text: 'Register',
+              text: 'Login',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 color: Colors.white70,
@@ -81,7 +83,7 @@ class LoginPage extends StatelessWidget {
     );
   }
 
-  void _navigateToRegistrationPage(BuildContext context) {
-    context.go(Routes.registrationRoute);
+  void _navigateBackToLoginPage(BuildContext context) {
+    context.go(Routes.loginRoute);
   }
 }

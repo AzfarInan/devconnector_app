@@ -6,4 +6,8 @@ class K {
 
   /// Assets
   static const String backgroundLogo = '$_images/dev_connector.png';
+
+  /// Hero Tag
+  static const String imageTag = 'background_image';
+  static const String titleTag = 'title';
 }

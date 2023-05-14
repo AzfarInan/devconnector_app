@@ -1,4 +1,4 @@
-import 'package:dev_connector_app/src/feature/login/presentation/page/login_page.dart';
+import 'package:dev_connector_app/src/core/navigation/go_router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'Dev Connector',
       theme: ThemeData(
         useMaterial3: true,
@@ -22,10 +22,14 @@ class MyApp extends StatelessWidget {
             fontFamily: GoogleFonts.righteous().fontFamily,
             color: Colors.white,
           ),
+          displayMedium: TextStyle(
+            fontFamily: GoogleFonts.righteous().fontFamily,
+            color: Colors.white,
+          ),
         ),
       ),
       debugShowCheckedModeBanner: false,
-      home: const LoginPage(),
+      routerConfig: router,
     );
   }
 }
